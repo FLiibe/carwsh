@@ -19,6 +19,24 @@ import dyllanImg from "./assets/images/dyllan_avatar_1786822588428.jpg";
 import thaboImg from "./assets/images/thabo_avatar_1786822596741.jpg";
 import leratoImg from "./assets/images/lerato_avatar_1786822604641.jpg";
 import brianImg from "./assets/images/brian_avatar_1786822615603.jpg";
+import UpsellPage from "./UpsellPage.tsx";
+import DownsellPage from "./DownsellPage.tsx";
+import ThankYouPage from "./ThankYouPage.tsx";
+
+function getRoute() {
+  const path = window.location.pathname.toLowerCase();
+  const hash = window.location.hash.toLowerCase();
+  if (path === "/upsell" || path.startsWith("/upsell") || hash === "#/upsell" || hash === "#upsell") {
+    return "upsell";
+  }
+  if (path === "/downsell" || path.startsWith("/downsell") || hash === "#/downsell" || hash === "#downsell") {
+    return "downsell";
+  }
+  if (path === "/thank-you" || path.startsWith("/thank-you") || hash === "#/thank-you" || hash === "#thank-you") {
+    return "thank-you";
+  }
+  return "home";
+}
 
 interface Pillar {
   id: string;
@@ -243,6 +261,32 @@ function Title({ top, light = false, children }: { top: string; light?: boolean;
 }
 
 export default function App() {
+  const [route, setRoute] = useState(getRoute);
+
+  useEffect(() => {
+    const handleLocationChange = () => {
+      setRoute(getRoute());
+    };
+    window.addEventListener("popstate", handleLocationChange);
+    window.addEventListener("hashchange", handleLocationChange);
+    return () => {
+      window.removeEventListener("popstate", handleLocationChange);
+      window.removeEventListener("hashchange", handleLocationChange);
+    };
+  }, []);
+
+  if (route === "upsell") {
+    return <UpsellPage />;
+  }
+
+  if (route === "downsell") {
+    return <DownsellPage />;
+  }
+
+  if (route === "thank-you") {
+    return <ThankYouPage />;
+  }
+
   const toOffer = () => document.getElementById("offer")?.scrollIntoView({ behavior: "smooth" });
 
   // 15-minute countdown timer (900 seconds)
