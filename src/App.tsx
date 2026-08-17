@@ -218,7 +218,7 @@ const reviews: Review[] = [
   }
 ];
 
-const HOTMART_CHECKOUT_URL = "https://pay.hotmart.com/C107182351N";
+const HOTMART_CHECKOUT_URL = "https://pay.hotmart.com/C107182351N?checkoutMode=10";
 
 function FAQ({ q, children }: { q: string; children: React.ReactNode }) {
   const [open, setOpen] = useState(false);
