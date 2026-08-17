@@ -1,0 +1,6 @@
+{
+  "name": "Mobile Car Wash Cash Kit",
+  "description": "Launch, price and promote a professional mobile car wash in South Africa.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

